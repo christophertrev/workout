@@ -5,3 +5,15 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 */
+
+function sumMultiplesOf3or5(maxNumber){
+  var sum = 0; 
+  for(var i = 3; i < maxNumber; i++){
+    if(i % 5 === 0 || i % 3 === 0){
+      sum += i; 
+    }
+  }
+  return sum; 
+}
+
+console.log(sumMultiplesOf3or5(100));
