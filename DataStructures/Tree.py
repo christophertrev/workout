@@ -23,13 +23,6 @@ class Node():
     if self.rightChild:
       yield self.rightChild.value
 
-  # def leftChild(self):
-  #   return self.leftChild
-
-
-  # def rightChild(self):
-  #   return self.rightChild
-
   def addChild(self, newValue):
     if(newValue == self.value):
       return 
@@ -44,16 +37,16 @@ class Node():
         self.rightChild = Node(newValue)
       else:
         self.rightChild.addChild(newValue)
-  
 
-
-# 4
-# | \
-# 1  5
-# |\  |\
-#   3
-#   
-
+  def contains(self, value):
+    if value == self.value:
+      return self
+    elif value < self.value and self.leftChild:
+      return self.leftChild.contains(value)
+    elif value > self.value and self.rightChild:
+      return self.rightChild.contains(value)
+    else:
+      return None
 
 
 
@@ -68,3 +61,5 @@ root.addChild(2)
 # print root.leftChild.rightChild.value
 for elem in root.breadthFirst():
   print elem
+print root.contains(10)
+
