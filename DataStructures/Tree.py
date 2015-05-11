@@ -40,26 +40,29 @@ class Node():
 
   def contains(self, value):
     if value == self.value:
-      return self
+      return True
     elif value < self.value and self.leftChild:
       return self.leftChild.contains(value)
     elif value > self.value and self.rightChild:
       return self.rightChild.contains(value)
     else:
-      return None
+      return False
 
 
 
 # Node(4).addChild(3).print()
 # Node(4).rightChild()
 # Node(4).rightChild/
-root = Node(4)
-root.addChild(5)
-root.addChild(1)
-root.addChild(2)
-# print root.rightChild.value
-# print root.leftChild.rightChild.value
-for elem in root.breadthFirst():
-  print elem
-print root.contains(10)
+
+if __name__ == '__main__':
+  root = Node(4)
+  root.addChild(5)
+  root.addChild(1)
+  root.addChild(2)
+  # print root.rightChild.value
+  # print root.leftChild.rightChild.value
+  for elem in root.breadthFirst():
+    print elem
+  print root.contains(10)
+  print root.contains(4)
 
