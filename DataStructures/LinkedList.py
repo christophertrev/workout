@@ -24,16 +24,21 @@ class Node():
 
  
 
-root = List(4)
-root.addToEnd(10)
-root.addToEnd(14)
-root.addToEnd(20)
-# print root.end 
-for node in root:
-  print node.value
-print root.start.value
-print root.end.value
+
 # root.addToEnd(4)
 # print root.end
 # for node in root:
 #   print node 
+
+
+
+if __name__ == '__main__':
+  root = List(4)
+  root.addToEnd(10)
+  root.addToEnd(14)
+  root.addToEnd(20)
+  # print root.end 
+  for node in root:
+    print node.value
+  print root.start.value
+  print root.end.value
