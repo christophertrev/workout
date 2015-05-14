@@ -11,6 +11,7 @@ var findnthPrime = function (n){
     for(var i = 0; listOfPrimes[i] <= Math.sqrt(currentNumber); i++){
       if(currentNumber % listOfPrimes[i] === 0 ){
         isPrime = false;
+        break;
       }
     }
     if(isPrime){
@@ -28,4 +29,4 @@ var findnthPrime = function (n){
 
 
 
-console.log(findnthPrime(10001))
+console.log(findnthPrime(1001))
