@@ -46,8 +46,15 @@ class TestBaseMatrix(unittest.TestCase):
     with self.assertRaises(IndexError):
       self.testMatrix[1,10] = 1
 
-  def testStorageArrayIsInOrder(self): 
-    pass
+  def testAddMatrixReturnsNewMatrix(self):
+    newMatrix = baseMatrix(1) + baseMatrix(1)
+    self.assertIsInstance(newMatrix, baseMatrix)
+
+
+  def testAddMatrixThrowErrorforMatrixOFUnEqualSize(self):
+    with self.assertRaises(TypeError):
+       baseMatrix(1) + baseMatrix(2)
+     
 
 if __name__ == '__main__':
   unittest.main()

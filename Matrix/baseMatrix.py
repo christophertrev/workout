@@ -28,7 +28,14 @@ class baseMatrix():
     if key[0] >= self.n or key[1] >= self.m:
       raise IndexError('index Out of bounds')
 
+  def __add__ (self, other):
+    self.checkEqualMatrixSize(self, other)
+    return baseMatrix(4)
 
+
+  def checkEqualMatrixSize(self,leftMatrix, rightMatrix):
+    if leftMatrix.m != rightMatrix.m or leftMatrix.n != rightMatrix.n:
+      raise TypeError('"+" Matrix size does not equal.')
 
 if __name__ == '__main__':
   mat = baseMatrix(2)
