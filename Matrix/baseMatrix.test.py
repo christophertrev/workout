@@ -4,6 +4,7 @@ from baseMatrix import *
 
 class TestBaseMatrix(unittest.TestCase):
   
+  
   def setUp(self):
     self.testMatrix = baseMatrix(4)
 
