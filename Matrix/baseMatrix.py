@@ -24,6 +24,9 @@ class baseMatrix():
   def __add__ (self, other):
     self.checkEqualMatrixSize(self, other)
     result = baseMatrix(self.n, self.m)
+    result._storage = self._storage
+    for key in other._storage: 
+      result[key[0], key[1]] += other._storage[key]
     return result
 
   def __eq__ (self,other):
