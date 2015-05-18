@@ -17,6 +17,7 @@ class baseMatrix():
     else: 
       return 0
     
+    
   def __setitem__(self, key, value):
     self.checkInBounds(key)
     self._storage[key] = value
