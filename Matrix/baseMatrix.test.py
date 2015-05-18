@@ -4,7 +4,7 @@ from baseMatrix import *
 
 class TestBaseMatrix(unittest.TestCase):
   
-  
+
   def setUp(self):
     self.testMatrix = baseMatrix(4)
 
@@ -47,6 +47,10 @@ class TestBaseMatrix(unittest.TestCase):
     with self.assertRaises(IndexError):
       self.testMatrix[1,10] = 1
 
+  def testEquality(self):
+    self.assertEqual(baseMatrix(4),baseMatrix(4))
+
+
   def testAddMatrixReturnsNewMatrix(self):
     newMatrix = baseMatrix(1) + baseMatrix(1)
     self.assertIsInstance(newMatrix, baseMatrix)
@@ -55,7 +59,12 @@ class TestBaseMatrix(unittest.TestCase):
   def testAddMatrixThrowErrorforMatrixOFUnEqualSize(self):
     with self.assertRaises(TypeError):
        baseMatrix(1) + baseMatrix(2)
-     
+
+  def testAddReturnsCorrectMatrix(self):
+    predictedResult = baseMatrix(2)
+    predictedResult[0,0] = 1
+    predictedResult[1,1] = 2 
+    self.assertEqual(baseMatrix(2) + predictedResult, predictedResult)
 
 if __name__ == '__main__':
   unittest.main()

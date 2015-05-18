@@ -30,6 +30,8 @@ class baseMatrix():
 
   def __add__ (self, other):
     self.checkEqualMatrixSize(self, other)
+    result = baseMatrix(self.n, self.m)
+    
     return baseMatrix(4)
 
 
