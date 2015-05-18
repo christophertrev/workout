@@ -50,6 +50,27 @@ class TestBaseMatrix(unittest.TestCase):
   def testEquality(self):
     self.assertEqual(baseMatrix(4),baseMatrix(4))
 
+  def testEqaulityFails(self):
+    newMatrix  = baseMatrix(4)
+    newMatrix[0,0] = 1
+    otherMat = baseMatrix(4)
+    otherMat[0,0] = 22
+    self.assertFalse(newMatrix == otherMat)
+
+  def testMainIterator(self):
+    predictedResults = [2,1,0,0]
+    results = []
+    mat = baseMatrix(2)
+    mat[0,1] = 1
+    mat[0,0] = 2
+    for value in mat: 
+      results.append(value)
+    self.assertEqual(predictedResults, results)
+
+  def testEqualityError(self):
+    with self.assertRaises(TypeError):
+      baseMatrix(3) == 2
+
 
   def testAddMatrixReturnsNewMatrix(self):
     newMatrix = baseMatrix(1) + baseMatrix(1)
