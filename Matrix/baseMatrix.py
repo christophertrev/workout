@@ -17,7 +17,7 @@ class baseMatrix():
     else: 
       return 0
     
-    
+
   def __setitem__(self, key, value):
     self.checkInBounds(key)
     self._storage[key] = value
@@ -49,12 +49,23 @@ class baseMatrix():
       for col in xrange(0,self.m):
         yield self[row,col]
 
+  def __mul__(self, other):
+    # print '__mul__'
+    self.checkMultMatrixSize(self, other)
+    return other
+
+
   def checkInBounds(self, key):
     if key[0] < 0 or key[1] < 0:
       raise IndexError('index Out of bounds')
     if key[0] >= self.n or key[1] >= self.m:
       raise IndexError('index Out of bounds')
 
+
+
+  def checkMultMatrixSize(self, leftMatrix, rightMatrix):
+    if leftMatrix.n != rightMatrix.m or leftMatrix.m != rightMatrix.n:
+      raise TypeError('"*" Matrix size does not equal.')
 
 
   def checkEqualMatrixSize(self,leftMatrix, rightMatrix):

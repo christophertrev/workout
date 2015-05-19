@@ -87,5 +87,11 @@ class TestBaseMatrix(unittest.TestCase):
     predictedResult[1,1] = 2 
     self.assertEqual(baseMatrix(2) + predictedResult, predictedResult)
 
+  def testMultThrowError(self):
+    with self.assertRaises(TypeError):
+       baseMatrix(1) * baseMatrix(2)
+    with self.assertRaises(TypeError):
+       baseMatrix(1,2) * baseMatrix(1,2)
+
 if __name__ == '__main__':
   unittest.main()
