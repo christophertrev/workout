@@ -9,6 +9,7 @@ class baseMatrix():
     self.n = n
     self.m = m
     self._storage = {}
+    # Might want to add sorted array
 
   def __getitem__(self,key):
     self.checkInBounds(key)
