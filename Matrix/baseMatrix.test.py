@@ -49,6 +49,13 @@ class TestBaseMatrix(unittest.TestCase):
 
   def testEquality(self):
     self.assertEqual(baseMatrix(4),baseMatrix(4))
+    a = baseMatrix(4)
+    b = baseMatrix(4)
+    a[0,0] = 1
+    b[1,1] = 2
+    a[1,1] = 2
+    b[0,0] = 1
+    self.assertEqual(a,b)
 
   def testEqaulityFails(self):
     newMatrix  = baseMatrix(4)

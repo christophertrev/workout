@@ -38,7 +38,7 @@ class baseMatrix():
       for key in self._storage:
         if key not in other._storage:
           return False
-        if self._storage != other._storage:
+        if self._storage[key] != other._storage[key]:
           return False
       return True
         
