@@ -100,5 +100,28 @@ class TestBaseMatrix(unittest.TestCase):
     with self.assertRaises(TypeError):
        baseMatrix(1,2) * baseMatrix(1,2)
 
+  def testMult(self):
+    a = baseMatrix(2)
+    for x in xrange(0,2):
+      for y in xrange(0,2):
+        a[x,y] = 1 
+
+    b = baseMatrix(2)
+    b[0,0] = 1
+    
+    zero = baseMatrix(2)
+    iden = baseMatrix(2)
+    iden[0,0] = 1
+    iden[1,1] = 1
+
+    result = baseMatrix(2)
+    result[0,0] = 1
+    result[1,0] = 1 
+
+    self.assertTrue( b * iden == b )    
+    self.assertTrue( zero * b == zero)
+    self.assertTrue(a * b == result)
+    
+
 if __name__ == '__main__':
   unittest.main()

@@ -4,6 +4,9 @@ Build using TDD workflow
 For N x M matrix with n elements filled 
   Space O(n)
   
+For N x M matrix with n elements with P x Q matrix with p elements
   Addtion
-  Space(n)
-  Time(n)
+    Time O(p)
+
+    Multiplication
+      Time O(n * Q)

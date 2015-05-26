@@ -53,7 +53,14 @@ class baseMatrix():
   def __mul__(self, other):
     # print '__mul__'
     self.checkMultMatrixSize(self, other)
-    return other
+    newMatrix = baseMatrix(self.n, other.m)
+
+    for key in self._storage:
+      for col in xrange(0,other.m):
+        if( other[key[1], col] != 0 ):
+          newMatrix[key[0],col] += self._storage[key] * other[key[1],col]
+
+    return newMatrix
 
 
   def checkInBounds(self, key):
@@ -65,7 +72,7 @@ class baseMatrix():
 
 
   def checkMultMatrixSize(self, leftMatrix, rightMatrix):
-    if leftMatrix.n != rightMatrix.m or leftMatrix.m != rightMatrix.n:
+    if leftMatrix.m != rightMatrix.n:
       raise TypeError('"*" Matrix size does not equal.')
 
 
