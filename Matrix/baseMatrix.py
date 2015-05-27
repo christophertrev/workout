@@ -32,6 +32,7 @@ class baseMatrix():
     return result
 
   def __eq__ (self,other):
+    # might be able to just compare other._storage to self._storage
     if isinstance(other, baseMatrix):
       if(len(other._storage) != len(self._storage)):
         return False

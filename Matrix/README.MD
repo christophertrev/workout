@@ -10,3 +10,11 @@ For N x M matrix with n elements with P x Q matrix with p elements
 
     Multiplication
       Time O(n * Q)
+
+
+Planned Features 
+  [] Scalar multiplication
+  [] Inverse 
+  [] Eigenvalues and eigenvectors
+  [] Trace
+  [] Exponents
