@@ -13,7 +13,7 @@ For N x M matrix with n elements with P x Q matrix with p elements
 
 
 Planned Features 
-  [] Scalar multiplication
+  [x] Scalar multiplication
   [] Inverse 
   [] Eigenvalues and eigenvectors
   [] Trace

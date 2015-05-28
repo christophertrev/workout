@@ -8,6 +8,9 @@ class TestBaseMatrix(unittest.TestCase):
   def setUp(self):
     self.testMatrix = baseMatrix(4)
 
+  # def testIsFloat(self):
+  #   self.assertFals
+
   def testInstanciation(self):
     testMatrix  = baseMatrix(1,3)
     self.assertEqual(testMatrix.n ,1)
@@ -121,7 +124,18 @@ class TestBaseMatrix(unittest.TestCase):
     self.assertTrue( b * iden == b )    
     self.assertTrue( zero * b == zero)
     self.assertTrue(a * b == result)
-    
+  
+  def testMultScalar(self):
+    iden = baseMatrix(2)
+    iden[0,0] = 1
+    iden[1,1] = 1
+
+    results = baseMatrix(2)
+    results[0,0] = 2
+    results[1,1] = 2
+
+    self.assertTrue(iden* 2 == results)
+
 
 if __name__ == '__main__':
   unittest.main()

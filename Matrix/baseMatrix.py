@@ -46,6 +46,9 @@ class baseMatrix():
     else: 
       raise TypeError
 
+  def __float__(self):
+    raise ValueError
+
   def __iter__(self):
     for row in xrange(0,self.n):
       for col in xrange(0,self.m):
@@ -53,6 +56,13 @@ class baseMatrix():
 
   def __mul__(self, other):
     # print '__mul__'
+    if self.isNumber(other):
+      result = baseMatrix(self.n, self.m)
+      for key in self._storage:
+        result._storage[key] = self._storage[key]* other
+      return result
+
+
     self.checkMultMatrixSize(self, other)
     newMatrix = baseMatrix(self.n, other.m)
 
@@ -63,6 +73,12 @@ class baseMatrix():
 
     return newMatrix
 
+  def isNumber(self, s):
+      try:
+          float(s)
+          return True
+      except ValueError:
+          return False
 
   def checkInBounds(self, key):
     if key[0] < 0 or key[1] < 0:
