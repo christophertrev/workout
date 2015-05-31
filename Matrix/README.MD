@@ -8,6 +8,7 @@ For N x M matrix with n elements with P x Q matrix with p elements
   Addtion
     Time O(p)
 
+
     Multiplication
       Time O(n * Q)
 
