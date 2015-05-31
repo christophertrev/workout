@@ -18,3 +18,4 @@ Planned Features
   [] Eigenvalues and eigenvectors
   [] Trace
   [] Exponents
+  [] Determinate 
